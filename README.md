@@ -35,7 +35,7 @@ Setelah itu hasil diprintkan
 
 
 #Soal 1b
----
+```
 awk -F"," 'BEGIN {
 min = 9007199254740; 
 minb = 9007199254740;
@@ -61,7 +61,8 @@ print "Negara bagian dengan profit tersedikit pertama adalah ",minimal;
 print "Negara bagian dengan profit tersedikit kedua adalah ",minimalb;
 	}
  ' /home/eric/Sample-Superstore.csv
----
+```
+
 Pada soal 1b, prinsip nya sama dengan soal 1a
 Diinisiasi 2 buah variabel, min dan minb
 Pertama2 diinisalisai 2 buah array, yang satu untuk menyimpan profit per negara bagian, dan satunya lagi untuk menyimpan region dari seuatu negara bagian
