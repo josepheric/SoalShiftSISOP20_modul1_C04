@@ -34,6 +34,38 @@ Kemudian dibuat suatu kondisi if untuk mencari nilai paling minimal
 Setelah itu hasil diprintkan
 
 
-#
+#Soal 1b
+---
+awk -F"," 'BEGIN {
+min = 9007199254740; 
+minb = 9007199254740;
+}
+{
+region[$11] = $13;
+count[$11]+= $21;
+}
+END{ 	
+  for (i in count)
+	{
+		if (count[i] < min && region [i] == "Central")
+			{	minb = min;
+				min = count [i];
+				minimal =i;}
+		else if (count [i] < minb && count[i] != min && region [i] ="Central")
+			{ 	minb = count [i];
+				minimalb = i;
+				}
+	}
 
+print "Negara bagian dengan profit tersedikit pertama adalah ",minimal;
+print "Negara bagian dengan profit tersedikit kedua adalah ",minimalb;
+	}
+ ' /home/eric/Sample-Superstore.csv
+---
+Pada soal 1b, prinsip nya sama dengan soal 1a
+Diinisiasi 2 buah variabel, min dan minb
+Pertama2 diinisalisai 2 buah array, yang satu untuk menyimpan profit per negara bagian, dan satunya lagi untuk menyimpan region dari seuatu negara bagian
 
+Dalam loop, ada 2 kali pengecekan, yaitu apabila nilai yg sekarang adalah nilai paling kecil, dan yang kedua adalah nilai merupakan kedua terkecil.
+
+Hasil dari 2 minimal ini kemudian diprint kan
