@@ -76,6 +76,8 @@ Hasil dari 2 minimal ini kemudian diprint kan
 Buat file dengan nano soal3.sh
 Tujuan file tersebut untuk membuat file password.txt yang bersifat acam
 Isi file tersebut adalah :
+
+```
 loop=1
 a=1
 while [ $loop -ne 0 ]
@@ -87,6 +89,7 @@ cat /dev/urandom | tr -dc '[a-z] [A-Z]' | fold -w 12 | head -n 1 > ~/password$a.
 loop=0
 fi
 done
+```
 
 Penjelasan :
 Saya membuat 2 variable
@@ -107,7 +110,9 @@ Lalu dijalankan dengan bash
 maka password.txt akan bertambah semisal dalam folder ada password1.txt, password2.txt, password3.txt saat file dijalankan dengan bash maka file password.txt akan bertambah menjadi password4.txt dengan isi yang acak.
 
 atau contoh yang lain saat file password2.txt dihapus maka saat file dijalankan dengan bash file password2.txt muncul kembali dengan isi yang acak 
-.Jawaban Soal no 2C
+
+#Jawaban Soal no 2C
+```
 cp /var/log/syslog backup(untuk mengcopy syslog dan menamai file sebagai backup)
 
 a=$(date +"%H")(menyimpan waktu jam sebagai variable)
@@ -142,3 +147,4 @@ case "$a" in(case switch akan waktu dan Caesar cipher untuk soal)
 
 esac
 mv  backup  $(date +"%H:%M_%d-%m-%y")(mengganti nama file)
+```
