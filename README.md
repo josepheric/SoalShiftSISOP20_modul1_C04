@@ -32,6 +32,7 @@ Kemudian dibuat suatu kondisi if apabla yang terbaca adalah region (karena berni
 Kemudian dibuat suatu kondisi if untuk mencari nilai paling minimal
 
 Setelah itu hasil diprintkan
+![Screenshot from 2020-02-29 20-59-49](https://user-images.githubusercontent.com/61129358/75608921-748d4b80-5b36-11ea-9527-1cdf8e03bedc.png)
 
 
 #Soal 1b
@@ -70,6 +71,8 @@ Pertama2 diinisalisai 2 buah array, yang satu untuk menyimpan profit per negara 
 Dalam loop, ada 2 kali pengecekan, yaitu apabila nilai yg sekarang adalah nilai paling kecil, dan yang kedua adalah nilai merupakan kedua terkecil.
 
 Hasil dari 2 minimal ini kemudian diprint kan
+
+#Soal no 1c
 
 #SOAL NO 2A.:
 
@@ -203,3 +206,81 @@ mv  $N.txt  File3.txt
 
 ```
 Nomor 2D mirip seperti nomor 1 tapi hanya mengdecrypsikan balik yaitu dengan mengubah aturan Tr,sehingga file kembali seperti semula
+
+
+#Soal no 3a
+```
+# !/bin/bash
+for ((i=1; i<=28; i+=1))
+do
+ wget -a wget.log -O pdkt_kusuma_$i "https://loremflickr.com/320/240/cat"
+done
+```
+
+#Penjelasan no 3a
+Menggunakan fungsi wget untuk mendownload file. -a untuk membuat log dengan nama tertentu, -O untuk menentukan nama file yang ingin didownload
+
+#Soal no 3b
+```
+5 6/8 * * 0-5 /home/eric/Soal3a.sh 
+```
+#Penjelasan no 3b
+Menggunakan crontab untuk mendownload file pada waktu yang telah ditentukan
+
+#Soal no 3c
+```
+# !/bin/bash
+
+mkdir duplicate
+mkdir kenangan
+cd kenangan
+
+for ((i=1; i<=28; i+=1))
+do
+ wget -O pdkt_kusuma_$i -a wget.log  "https://loremflickr.com/320/240/cat"
+done
+
+grep -r "loremflickr.com" wget.log >> location.log
+
+let d=1;
+for ((i=1; i<=28; i++))
+        do
+                for((j=$i+1; j<=28; j++))
+                do		
+				
+				if cmp -s "pdkt_kusuma_"$i"" "pdkt_kusuma_"$j"" ;
+				then
+                                mv "pdkt_kusuma_$j"  "duplicate_$d"
+                                mv "duplicate_$d" /home/eric/duplicate
+                                d=$((d+1))
+				fi
+                done
+
+        done
+
+cat location.log >> wget.log.bak
+```
+Penjelasan no 3c:
+
+Pertama-tama file di download di folder Kusuma
+Kemudian log lokasi dipindahkan ke location.log
+
+lalu menggunakan 
+`for ((i=1; i<=28; i++))
+        do
+                for((j=$i+1; j<=28; j++))
+                do`
+Untuk mengiterasi seluruh file yang ada, kemudian membandingkan dengan file selanjutnya
+`if cmp -s "pdkt_kusuma_"$i"" "pdkt_kusuma_"$j"" ;
+				then
+                                mv "pdkt_kusuma_$j"  "duplicate_$d"
+                                mv "duplicate_$d" /home/eric/duplicate
+                                d=$((d+1))
+				fi`
+File kemudian dibandingkan dengan seluruh file lainnya menggunakan cmp -s, apabila ada yang sama, akan direname menjadi duplicate_, kemudian dipindahkan ke folder duplicate
+cmp -s membandingkan byte per bytr dalam suatu file
+
+Kendala:
+Soal 1c: tidak tahu bahwa boleh menggunakan sort dari linuxnya, sehingga sempat kesulitan
+Soal 2b: sempat bingung memahami soal 
+Soal 3c: sempat kesulitan mencari cara membandingkan gambar yang duplikat
