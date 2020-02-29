@@ -151,6 +151,8 @@ maka password.txt akan bertambah semisal dalam folder ada password1.txt, passwor
 
 atau contoh yang lain saat file password2.txt dihapus maka saat file dijalankan dengan bash file password2.txt muncul kembali dengan isi yang acak 
 
+![1582987039690](https://user-images.githubusercontent.com/61129358/75609534-0e0b2c00-5b3c-11ea-98ba-2ad5f4d59857.png)
+
 #Jawaban Soal no 2C
 
 ```
@@ -191,6 +193,9 @@ esac
 mv  $N.txt  $file1.txt
 
 Nomor 2 C membaca file tersebut kemudian mengganti nama  file menjadi encrypt,disini File user akan mengetikkan nama file yang dimana isi file tersebut akan di enkripsikan kemudian nama dari file tersebut diubah sesuai dengan encripsi tersebut
+
+![1582987048342](https://user-images.githubusercontent.com/61129358/75609544-29763700-5b3c-11ea-8598-1c983340927a.png)
+
 
 #Nomor 2D
 
@@ -234,6 +239,23 @@ mv  $N.txt  File3.txt
 
 ```
 Nomor 2D mirip seperti nomor 1 tapi hanya mengdecrypsikan balik yaitu dengan mengubah aturan Tr,sehingga file kembali seperti semula
+
+
+
+![1582987050729](https://user-images.githubusercontent.com/61129358/75609546-2bd89100-5b3c-11ea-946f-acd0bbcece4f.png)
+
+![1582987055408](https://user-images.githubusercontent.com/61129358/75609547-2d09be00-5b3c-11ea-944f-51954e5110a9.png)
+
+![1582987045907](https://user-images.githubusercontent.com/61129358/75609550-2f6c1800-5b3c-11ea-958c-cb30efe7035e.png)
+
+![1582987053036](https://user-images.githubusercontent.com/61129358/75609554-32ff9f00-5b3c-11ea-8d35-195e700d9e5a.png)
+
+
+
+
+
+
+
 
 
 #Soal no 3a
