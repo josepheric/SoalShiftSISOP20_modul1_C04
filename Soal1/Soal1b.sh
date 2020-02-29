@@ -20,10 +20,6 @@ END{ 	if (count["Illinois"] < count["Texas"])
 				minimalb = i;
 				}
 	}
-for (i in count)
-	{if (region [i] == "Central")
-		print i," ",count[i];
-			}
 print "Negara bagian dengan profit tersedikit pertama adalah ",minimal;
 print "Negara bagian dengan profit tersedikit kedua adalah ",minimalb;
 	}
