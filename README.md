@@ -72,9 +72,37 @@ Dalam loop, ada 2 kali pengecekan, yaitu apabila nilai yg sekarang adalah nilai 
 
 Hasil dari 2 minimal ini kemudian diprint kan
 
-#Soal no 1c
+![Screenshot from 2020-02-29 21-05-41](https://user-images.githubusercontent.com/61129358/75608988-4b20ef80-5b37-11ea-823a-b57bb7ccbb10.png)
 
-#SOAL NO 2A.:
+#Soal no 1c
+` 
+export LC_ALL=C
+awk -F"," 'BEGIN {
+}
+ 
+{  
+if (region $11=="Texas"  || $11 == "Illinois")
+	{count[$17]+= $21;}
+}
+END{ 	print "Profit    Nama Produk";
+	for (i in count)
+	{  
+	print count [i], i;
+		}
+	}
+ ' /home/eric/Sample-Superstore.csv | sort -g |head -10`
+ 
+ #Penjelasan soal no 1c:
+ Pertama-tama menghitung profit di negara bagian dari jawaban no 2b.
+ Kemudian hasilnya dimasukkan kedalam array count yang indeksnya adalah nama barang
+ Setelah itu profit dan nama barang diprint
+ 
+ Ditambahkan | sort -g |head -10 agar hasil yang ditampilkan adalah 10 produk dengan profit terkecil
+ 
+ ![Screenshot from 2020-02-29 21-07-22](https://user-images.githubusercontent.com/61129358/75609002-86bbb980-5b37-11ea-8566-20241df95ca7.png)
+ 
+ 
+#SOAL NO 2A dan 2B:
 
 Buat file dengan nano soal3.sh
 Tujuan file tersebut untuk membuat file password.txt yang bersifat acam
@@ -220,6 +248,8 @@ done
 #Penjelasan no 3a
 Menggunakan fungsi wget untuk mendownload file. -a untuk membuat log dengan nama tertentu, -O untuk menentukan nama file yang ingin didownload
 
+![Screenshot from 2020-02-29 21-09-16](https://user-images.githubusercontent.com/61129358/75609032-c84c6480-5b37-11ea-971d-f7b141f5514e.png)
+
 #Soal no 3b
 ```
 5 6/8 * * 0-5 /home/eric/Soal3a.sh 
@@ -279,6 +309,10 @@ Untuk mengiterasi seluruh file yang ada, kemudian membandingkan dengan file sela
 				fi`
 File kemudian dibandingkan dengan seluruh file lainnya menggunakan cmp -s, apabila ada yang sama, akan direname menjadi duplicate_, kemudian dipindahkan ke folder duplicate
 cmp -s membandingkan byte per bytr dalam suatu file
+
+![Screenshot from 2020-02-29 21-10-52](https://user-images.githubusercontent.com/61129358/75609067-034e9800-5b38-11ea-86fa-91d531437829.png)
+
+![Screenshot from 2020-02-29 21-12-04](https://user-images.githubusercontent.com/61129358/75609084-33963680-5b38-11ea-8e68-85406873f400.png)
 
 Kendala:
 Soal 1c: tidak tahu bahwa boleh menggunakan sort dari linuxnya, sehingga sempat kesulitan
